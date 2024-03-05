@@ -25,8 +25,9 @@ body {
 /** Globales **/
 /* lo que se va a utilizar más de una vez */
 .contenedor {
-    max-width: 120rem;
-    width: 90%;
+    /*max-width: 120rem; /*maximo 1200 pixeles mientras all espacio disponible*/
+    /*width: 90%; /*usar el 90% de la pantalla si es menor al max-width*/
+    width: min(90%, 120rem); /*misma funcionalidad que las dos lineas anteriores*/
     margin: 0 auto;
 }
 
@@ -90,6 +91,10 @@ img {
     .header__texto {
         margin-top: 15rem;
     }
+}
+
+.barra {
+    padding-top: 4rem;
 }
 
 @media (min-width: 768px) {
@@ -196,4 +201,29 @@ img {
 .widget-curso__info,
 .widget-curso__label{
     font-size: 2rem;
+}
+
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+
+/** Sobre nosotros**/
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto {
+        flex-basis: 50%;
+    }
+
+    /*.sobre-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }*/ /*tiene la misma funcionalidad que los dos cuados anteriores*/
 }
